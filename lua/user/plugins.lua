@@ -72,7 +72,11 @@ lvim.plugins = {
                 default_im_select = "com.apple.keylayout.ABC"
             }
         end
-    }, {"dccsillag/magma-nvim", run = ":UpdateRemotelugins"}, {
+    }, {
+        "dccsillag/magma-nvim",
+        commit = "0ab5ef297bf98d69f03bb069533444c14cd53383",
+        run = ":UpdateRemotePlugins"
+    }, {
         "tzachar/cmp-tabnine",
         run = "./install.sh",
         requires = "hrsh7th/nvim-cmp",
