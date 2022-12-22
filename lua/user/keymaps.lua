@@ -13,7 +13,7 @@ vim.keymap.set("o", "L", "$")
 
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["T"] = {
+lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
   r = { "<cmd>Trouble lsp_references<cr>", "References" },
   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
@@ -32,3 +32,16 @@ lvim.builtin.which_key.mappings["gf"] = {
   i = { "<cmd>GitConflictChooseTheirs<cr>", "Use incoming changes" },
   o = { "<cmd>GitConflictChooseTheirs<cr>", "Use current changes" },
 }
+
+
+-- Lua
+lvim.lsp.buffer_mappings.normal_mode['gr'] = { "<cmd>TroubleToggle lsp_references<cr>", "Go to references(Trouble)" }
+lvim.lsp.buffer_mappings.normal_mode['gw'] = { "<cmd>TroubleToggle workspace_diagnostics<cr>",
+  "Workspace diagnostics(Trouble)" }
+lvim.lsp.buffer_mappings.normal_mode['gf'] = { "<cmd>TroubleToggle document_diagnostics<cr>",
+  "Document diagnostics(Trouble)" }
+lvim.lsp.buffer_mappings.normal_mode['gd'] = { "<cmd>TroubleToggle lsp_definitions<cr>", "Go to definitions(Trouble)" }
+lvim.lsp.buffer_mappings.normal_mode['gt'] = { "<cmd>TroubleToggle lsp_type_definitions<cr>",
+  "Go to type definitions(Trouble)" }
+lvim.lsp.buffer_mappings.normal_mode['gj'] = { vim.diagnostic.goto_next, "Next Diagnostic" }
+lvim.lsp.buffer_mappings.normal_mode['gk'] = { vim.diagnostic.goto_prev, "Prev Diagnostic" }

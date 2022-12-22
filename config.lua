@@ -2,8 +2,7 @@
 -- lvim.builtin.which_key.mappings["df"] = { "<cmd>lua require('dap-python').test_class()<cr>", "Test Class" }
 -- lvim.builtin.which_key.vmappings["d"] = {
 --   name = "Debug",
---   s = { "<cmd>lua require('dap-python').debug_selection()<cr>", "Debug Selection" },
--- }
+--   s = { "<cmd>lua require('dap-python').debug_selection()<cr>", "Debug Selection" }, }
 -- pcall(function()
 --   -- require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python")
 --   require("dap-python").setup("python")
@@ -27,7 +26,6 @@
 -- })
 reload "user.plugins"
 reload "user.options"
-reload "user.keymaps"
 reload "user.lsp"
 reload "user.pydocstring"
 reload "user.scrollbar"
@@ -36,3 +34,5 @@ reload "user.neoscroll"
 reload "user.inlay-hints"
 reload "user.toggleterm"
 reload "user.ufo"
+reload "user.themes"
+reload "user.keymaps"
