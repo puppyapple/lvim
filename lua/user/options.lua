@@ -4,7 +4,6 @@ lvim.colorscheme = "onedark"
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.terminal.direction = "horizontal"
 lvim.builtin.terminal.size = 15
-lvim.builtin.lualine.sections.lualine_z = { 'os.date("%I:%M", os.time())' }
 lvim.builtin.cmp.cmdline.enable = true
 lvim.builtin.bufferline.options.separator_style = "slant"
 lvim.builtin.bufferline.options.always_show_bufferline = true
