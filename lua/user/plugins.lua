@@ -1,6 +1,9 @@
 -- Additional Plugins
 lvim.plugins = {
     {
+        "ray-x/lsp_signature.nvim",
+        config = function() require"lsp_signature".setup({}) end
+    }, {
         'edluffy/hologram.nvim',
         config = function()
             require('hologram').setup {
@@ -112,10 +115,15 @@ lvim.plugins = {
         requires = "hrsh7th/nvim-cmp",
         config = function()
             local tabnine = require "cmp_tabnine.config"
-            tabnine:setup{max_lines = 1000, max_num_results = 10, sort = true}
-        end,
-        opt = true,
-        event = "InsertEnter"
+            tabnine:setup{
+                max_lines = 1000,
+                max_num_results = 10,
+                sort = true,
+                run_on_every_keystroke = true
+            }
+        end
+        -- opt = true,
+        -- event = "InsertEnter"
     }, {"p00f/nvim-ts-rainbow"}, {
         "kevinhwang91/rnvimr",
         cmd = "RnvimrToggle",
