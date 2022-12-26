@@ -1,6 +1,11 @@
 -- Additional Plugins
 lvim.plugins = {
     {
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        ft = "markdown",
+        config = function() vim.g.mkdp_auto_start = 1 end
+    }, {
         "ray-x/lsp_signature.nvim",
         config = function() require"lsp_signature".setup({}) end
     }, {
@@ -143,13 +148,6 @@ lvim.plugins = {
         event = "BufRead",
         config = function() require("todo-comments").setup() end
     }, {"nvim-treesitter/playground", event = "BufRead"}, -- {
-    --   "numirias/semshi",
-    --   as = "semshi",
-    --   -- run = ":hi semshiGlobal ctermfg=red guifg=#e06c75",
-    --   config = function()
-    --     vim.cmd("hi def semshiGlobal guifg=#2c56ff")
-    --   end
-    -- },
     {"navarasu/onedark.nvim", as = "onedark"}, {"EdenEast/nightfox.nvim"}
     -- {
     --   "numirias/semshi",
