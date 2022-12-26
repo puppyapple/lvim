@@ -2,8 +2,9 @@
 lvim.plugins = {
     {
         "iamcco/markdown-preview.nvim",
-        run = "cd app && npm install",
+        opt = true,
         ft = "markdown",
+        run = function() vim.fn["mkdp#util#install"]() end,
         config = function() vim.g.mkdp_auto_start = 1 end
     }, {
         "ray-x/lsp_signature.nvim",
