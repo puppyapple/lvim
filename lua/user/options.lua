@@ -7,6 +7,7 @@ lvim.builtin.terminal.size = 15
 lvim.builtin.cmp.cmdline.enable = true
 lvim.builtin.bufferline.options.separator_style = "slant"
 lvim.builtin.bufferline.options.always_show_bufferline = true
+lvim.lsp.diagnostics.virtual_text = false
 
 vim.highlight.on_yank {timeout = 2000}
 vim.opt.relativenumber = true
