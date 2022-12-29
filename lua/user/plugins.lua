@@ -1,6 +1,18 @@
 -- Additional Plugins
 lvim.plugins = {
     {
+        "ahmedkhalf/lsp-rooter.nvim",
+        config = function()
+            require("lsp-rooter").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }, {
+        "segeljakt/vim-silicon",
+        config = function() vim.g.silicon = {pad_horiz = 0, pad_vert = 0} end
+    }, {
         "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
         config = function() require("lsp_lines").setup() end
     }, {

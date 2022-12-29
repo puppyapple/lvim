@@ -10,7 +10,7 @@ lvim.builtin.bufferline.options.always_show_bufferline = true
 lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.cmp.cmdline.enable = true
 lvim.builtin.cmp.experimental.ghost_text = true
-lvim.builtin.cmp.view.entries = "native"
+-- lvim.builtin.cmp.view.entries = "native"
 
 vim.highlight.on_yank {timeout = 2000}
 vim.opt.relativenumber = true
