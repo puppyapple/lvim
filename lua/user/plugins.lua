@@ -1,6 +1,6 @@
 -- Additional Plugins
 lvim.plugins = {
-    {
+    {"lukas-reineke/cmp-under-comparator"}, {
         "glepnir/lspsaga.nvim",
         branch = "main",
         config = function()
@@ -34,13 +34,6 @@ lvim.plugins = {
     }, {
         "ray-x/lsp_signature.nvim",
         config = function() require"lsp_signature".setup({}) end
-    }, {
-        'edluffy/hologram.nvim',
-        config = function()
-            require('hologram').setup {
-                auto_display = true -- WIP automatic markdown image display, may be prone to breaking
-            }
-        end
     }, {
         "kevinhwang91/nvim-hlslens",
         config = function()
@@ -128,7 +121,7 @@ lvim.plugins = {
         "dccsillag/magma-nvim",
         commit = "0ab5ef297bf98d69f03bb069533444c14cd53383",
         run = ":UpdateRemotePlugins"
-    }, {
+    }, {"jc-doyle/cmp-pandoc-references", requires = "hrsh7th/nvim-cmp"}, {
         "tzachar/cmp-tabnine",
         run = "./install.sh",
         requires = "hrsh7th/nvim-cmp",

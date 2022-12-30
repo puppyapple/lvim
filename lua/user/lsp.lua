@@ -31,3 +31,6 @@ linters.setup {
 }
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, {"marksman"})
 require("lvim.lsp.manager").setup("marksman")
+require('lspconfig').pyright.setup {
+    on_attach = require'virtualtypes'.on_attach()
+}

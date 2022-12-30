@@ -6,11 +6,15 @@ lvim.keys.normal_mode["H"] = "^"
 lvim.keys.normal_mode["L"] = "$"
 lvim.keys.visual_mode["H"] = "^"
 lvim.keys.visual_mode["L"] = "$"
+lvim.keys.normal_mode["<C-Right>"] = ""
+lvim.keys.normal_mode["<C-Left>"] = ""
 -- lvim.keys.normal_mode["<tab>"] = ":bnext<CR>"
 vim.keymap.set("o", "H", "^")
 vim.keymap.set("o", "L", "$")
 
 -- Use which-key to add extra bindings with the leader-key prefix
+lvim.builtin.which_key.mappings["j"] = {":bnext<CR>", "Next Buffer"}
+lvim.builtin.which_key.mappings["k"] = {":bprevious<CR>", "Next Buffer"}
 lvim.builtin.which_key.mappings["P"] = {
     "<cmd>Telescope projects<CR>", "Projects"
 }
@@ -88,4 +92,7 @@ lvim.lsp.buffer_mappings.normal_mode['gj'] = {
 }
 lvim.lsp.buffer_mappings.normal_mode['gk'] = {
     "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Prev Diagnostic"
+}
+lvim.lsp.buffer_mappings.normal_mode['go'] = {
+    "<cmd>SymbolsOutline<cr>", "Symbols Outline"
 }

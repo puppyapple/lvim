@@ -11,9 +11,17 @@ lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.cmp.cmdline.enable = true
 lvim.builtin.cmp.experimental.ghost_text = true
 lvim.builtin.breadcrumbs.active = false
-
--- lvim.builtin.cmp.view.entries = "native"
-
+table.insert(lvim.builtin.cmp.sources, {name = "pandoc_references"})
+local cmp = require("cmp")
+lvim.builtin.cmp.sorting = {
+    comparators = {
+        cmp.config.compare.offset, cmp.config.compare.exact,
+        cmp.config.compare.score, require"cmp-under-comparator".under,
+        cmp.config.compare.recently_used, cmp.config.compare.locality,
+        cmp.config.compare.kind, cmp.config.compare.sort_text,
+        cmp.config.compare.length, cmp.config.compare.order
+    }
+}
 vim.highlight.on_yank {timeout = 2000}
 vim.opt.relativenumber = true
 vim.opt.foldmethod = "expr"
