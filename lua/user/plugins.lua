@@ -58,20 +58,8 @@ lvim.plugins = {
         augroup END
     ]])
         end
-    }, {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}, {
-        'keaising/im-select.nvim',
-        config = function()
-            require('im_select').setup {
-                -- IM will be set to `default_im_select` in `normal` mode(`EnterVim` or `InsertLeave`)
-                -- For Windows, default: "1003", aka: English US Keyboard
-                -- You can use `im-select` in cli to get the IM name of you preferred
-                default_im_select = "com.apple.keylayout.ABC",
-
-                -- Set to 1 if you don't want restore IM status when `InsertEnter`
-                disable_auto_restore = 1
-            }
-        end
-    }, {"lvimuser/lsp-inlayhints.nvim"}, {"petertriho/nvim-scrollbar"},
+    }, {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'},
+    {"lvimuser/lsp-inlayhints.nvim"}, {"petertriho/nvim-scrollbar"},
     {"TimUntersberger/neogit"}, {
         "akinsho/git-conflict.nvim",
         tag = "*",
