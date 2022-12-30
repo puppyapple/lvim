@@ -1,6 +1,16 @@
 -- Additional Plugins
 lvim.plugins = {
     {
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = function()
+            local saga = require("lspsaga")
+            saga.init_lsp_saga({
+                symbol_in_winbar = {enable = true},
+                code_action_lightbulb = {enable = true}
+            })
+        end
+    }, {
         "ahmedkhalf/lsp-rooter.nvim",
         config = function()
             require("lsp-rooter").setup {
