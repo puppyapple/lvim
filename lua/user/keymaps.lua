@@ -31,7 +31,7 @@ lvim.builtin.which_key.mappings["t"] = {
 lvim.builtin.which_key.mappings["ba"] = {
     "<cmd>Telescope buffers<cr>", "Buffers"
 }
-
+lvim.builtin.which_key.mappings["lu"] = {"<cmd>LspRestart<cr>", "Restart LSP"}
 lvim.builtin.which_key.mappings["gf"] = {
     name = "+Conflict",
     n = {"<cmd>GitConflictNextConflict<cr>", "Next Conflict"},

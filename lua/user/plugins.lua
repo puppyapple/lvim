@@ -23,9 +23,6 @@ lvim.plugins = {
         "segeljakt/vim-silicon",
         config = function() vim.g.silicon = {pad_horiz = 0, pad_vert = 0} end
     }, {
-        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-        config = function() require("lsp_lines").setup() end
-    }, {
         "iamcco/markdown-preview.nvim",
         opt = true,
         ft = "markdown",
