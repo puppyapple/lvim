@@ -1,6 +1,6 @@
 -- Additional Plugins
 lvim.plugins = {
-    {"lukas-reineke/cmp-under-comparator"}, {
+    {"itchyny/vim-cursorword"}, {"lukas-reineke/cmp-under-comparator"}, {
         "glepnir/lspsaga.nvim",
         branch = "main",
         config = function()
@@ -28,9 +28,6 @@ lvim.plugins = {
         ft = "markdown",
         run = function() vim.fn["mkdp#util#install"]() end,
         config = function() vim.g.mkdp_auto_start = 1 end
-    }, {
-        "ray-x/lsp_signature.nvim",
-        config = function() require"lsp_signature".setup({}) end
     }, {
         "kevinhwang91/nvim-hlslens",
         config = function()

@@ -8,6 +8,8 @@ lvim.keys.visual_mode["H"] = "^"
 lvim.keys.visual_mode["L"] = "$"
 lvim.keys.normal_mode["<C-Right>"] = ""
 lvim.keys.normal_mode["<C-Left>"] = ""
+lvim.keys.normal_mode["<A-j>"] = ":m+1<cr>"
+lvim.keys.normal_mode["<A-k>"] = ":m-2<cr>"
 -- lvim.keys.normal_mode["<tab>"] = ":bnext<CR>"
 vim.keymap.set("o", "H", "^")
 vim.keymap.set("o", "L", "$")
@@ -37,10 +39,12 @@ lvim.builtin.which_key.mappings["gf"] = {
     n = {"<cmd>GitConflictNextConflict<cr>", "Next Conflict"},
     p = {"<cmd>GitConflictPrevConflict<cr>", "Previous Conflict"},
     i = {"<cmd>GitConflictChooseTheirs<cr>", "Use incoming changes"},
-    o = {"<cmd>GitConflictChooseTheirs<cr>", "Use current changes"}
+    o = {"<cmd>GitConflictChooseOurs<cr>", "Use current changes"}
 }
 
-lvim.builtin.which_key.mappings["lr"] = {"<cmd>Lspsaga rename<cr>", "Rename"}
+lvim.builtin.which_key.mappings["lr"] = {
+    "<cmd>Lspsaga rename<cr>", "Rename(LspSaga)"
+}
 lvim.builtin.which_key.mappings["la"] = {
     "<cmd>Lspsaga code_action<cr>", "Code Action"
 }
