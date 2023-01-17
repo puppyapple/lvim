@@ -1,6 +1,11 @@
 -- Additional Plugins
 lvim.plugins = {
-    {"itchyny/vim-cursorword"}, {"lukas-reineke/cmp-under-comparator"}, {
+    {
+        "ray-x/lsp_signature.nvim",
+        config = function()
+            require"lsp_signature".setup({hint_enable = false})
+        end
+    }, {"itchyny/vim-cursorword"}, {"lukas-reineke/cmp-under-comparator"}, {
         "glepnir/lspsaga.nvim",
         branch = "main",
         config = function()
@@ -19,10 +24,7 @@ lvim.plugins = {
                 -- refer to the configuration section below
             }
         end
-    }, {
-        "segeljakt/vim-silicon",
-        config = function() vim.g.silicon = {pad_horiz = 0, pad_vert = 0} end
-    }, {
+    }, {"segeljakt/vim-silicon"}, {
         "iamcco/markdown-preview.nvim",
         opt = true,
         ft = "markdown",

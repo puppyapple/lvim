@@ -24,6 +24,7 @@ lvim.builtin.cmp.sorting = {
     }
 }
 vim.highlight.on_yank {timeout = 2000}
+vim.opt.cursorcolumn = true
 vim.opt.relativenumber = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
@@ -58,9 +59,9 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 
 lvim.builtin.treesitter.ignore_install = {"haskell"}
--- lvim.lsp.on_attach_callback = function(client, bufnr)
---     require"lsp_signature".on_attach()
--- end
+lvim.lsp.on_attach_callback = function(client, bufnr)
+    require"lsp_signature".on_attach()
+end
 -- lvim.builtin.treesitter.highlight.enable = true
 local options = {scrolloff = 0, sidescrolloff = 8, updatetime = 100}
 for k, v in pairs(options) do vim.opt[k] = v end
