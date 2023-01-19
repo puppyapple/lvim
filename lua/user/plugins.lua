@@ -7,10 +7,11 @@ lvim.plugins = {
         end
     }, {"itchyny/vim-cursorword"}, {"lukas-reineke/cmp-under-comparator"}, {
         "glepnir/lspsaga.nvim",
-        branch = "main",
+        -- branch = "main",
+        event = "BufRead",
         config = function()
             local saga = require("lspsaga")
-            saga.init_lsp_saga({
+            saga.setup({
                 symbol_in_winbar = {enable = true},
                 code_action_lightbulb = {enable = true}
             })
@@ -26,9 +27,9 @@ lvim.plugins = {
         end
     }, {"segeljakt/vim-silicon"}, {
         "iamcco/markdown-preview.nvim",
-        opt = true,
+        lazy = true,
         ft = "markdown",
-        run = function() vim.fn["mkdp#util#install"]() end,
+        build = function() vim.fn["mkdp#util#install"]() end,
         config = function() vim.g.mkdp_auto_start = 1 end
     }, {
         "kevinhwang91/nvim-hlslens",
@@ -47,11 +48,11 @@ lvim.plugins = {
         augroup END
     ]])
         end
-    }, {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'},
+    }, {'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async'},
     {"lvimuser/lsp-inlayhints.nvim"}, {"petertriho/nvim-scrollbar"},
     {"TimUntersberger/neogit"}, {
         "akinsho/git-conflict.nvim",
-        tag = "*",
+        version = "*",
         config = function() require('git-conflict').setup() end
     }, {
         "m-demare/hlargs.nvim",
@@ -116,11 +117,11 @@ lvim.plugins = {
     }, {
         "dccsillag/magma-nvim",
         commit = "0ab5ef297bf98d69f03bb069533444c14cd53383",
-        run = ":UpdateRemotePlugins"
-    }, {"jc-doyle/cmp-pandoc-references", requires = "hrsh7th/nvim-cmp"}, {
+        build = ":UpdateRemotePlugins"
+    }, {"jc-doyle/cmp-pandoc-references", dependencies = "hrsh7th/nvim-cmp"}, {
         "tzachar/cmp-tabnine",
-        run = "./install.sh",
-        requires = "hrsh7th/nvim-cmp",
+        build = "./install.sh",
+        dependencies = "hrsh7th/nvim-cmp",
         config = function()
             local tabnine = require "cmp_tabnine.config"
             tabnine:setup{
@@ -151,10 +152,10 @@ lvim.plugins = {
         event = "BufRead",
         config = function() require("todo-comments").setup() end
     }, {"nvim-treesitter/playground", event = "BufRead"}, -- {
-    {"navarasu/onedark.nvim", as = "onedark"}, {"EdenEast/nightfox.nvim"}
+    {"navarasu/onedark.nvim", name = "onedark"}, {"EdenEast/nightfox.nvim"}
     -- {
     --   "numirias/semshi",
-    --   as = "semshi",
+    --   name = "semshi",
     --   -- run = ":hi semshiGlobal ctermfg=red guifg=#e06c75",
     --   config = function()
     --     -- vim.cmd("hi def semshiGlobal guifg=#2c56ff")
