@@ -88,9 +88,11 @@ lvim.lsp.buffer_mappings.normal_mode['gr'] = {
 }
 
 lvim.lsp.buffer_mappings.normal_mode['gd'] = {
-    "<cmd>Lspsaga peek_definition<cr>", "Go to definitions(LspSaga)"
+    "<cmd>Lspsaga goto_definition<cr>", "Go to definitions(LspSaga)"
 }
-
+lvim.lsp.buffer_mappings.normal_mode['gp'] = {
+    "<cmd>Lspsaga peek_definition<cr>", "Peek definitions(LspSaga)"
+}
 lvim.lsp.buffer_mappings.normal_mode['gj'] = {
     "<cmd>Lspsaga diagnostic_jump_next<cr>", "Next Diagnostic"
 }
