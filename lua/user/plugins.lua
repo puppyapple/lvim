@@ -117,7 +117,7 @@ lvim.plugins = {
         end
         -- opt = true,
         -- event = "InsertEnter"
-    }, {"p00f/nvim-ts-rainbow"}, {
+    }, {
         "kevinhwang91/rnvimr",
         cmd = "RnvimrToggle",
         config = function()

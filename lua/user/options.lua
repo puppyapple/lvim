@@ -12,6 +12,7 @@ lvim.builtin.cmp.cmdline.enable = true
 lvim.builtin.cmp.experimental.ghost_text = true
 lvim.builtin.breadcrumbs.active = false
 lvim.lsp.diagnostics.update_in_insert = true
+lvim.lsp.installer.setup.automatic_installation = true
 table.insert(lvim.builtin.cmp.sources, {name = "pandoc_references"})
 local cmp = require("cmp")
 lvim.builtin.cmp.sorting = {
@@ -29,6 +30,7 @@ vim.opt.relativenumber = true
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
+vim.opt.smartindent = true
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
