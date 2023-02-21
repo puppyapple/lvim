@@ -1,6 +1,10 @@
 -- Additional Plugins
 lvim.plugins = {
     {
+        "giusgad/pets.nvim",
+        dependencies = {"MunifTanjim/nui.nvim", "edluffy/hologram.nvim"},
+        config = function() require("pets").setup() end
+    }, {
         "ray-x/lsp_signature.nvim",
         config = function()
             require"lsp_signature".setup({hint_enable = false})
