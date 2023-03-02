@@ -1,13 +1,17 @@
 -- Additional Plugins
 lvim.plugins = {
-    {
+    {"VonHeikemen/fine-cmdline.nvim"}, {
         "giusgad/pets.nvim",
         dependencies = {"MunifTanjim/nui.nvim", "edluffy/hologram.nvim"},
         config = function() require("pets").setup() end
     }, {
         "ray-x/lsp_signature.nvim",
         config = function()
-            require"lsp_signature".setup({hint_enable = false})
+            require"lsp_signature".setup({
+                hint_enable = true,
+                floating_window = false,
+                toggle_key = "<C-x>"
+            })
         end
     }, {"itchyny/vim-cursorword"}, {"lukas-reineke/cmp-under-comparator"}, {
         "glepnir/lspsaga.nvim",
@@ -18,18 +22,13 @@ lvim.plugins = {
             saga.setup({
                 symbol_in_winbar = {enable = true, color_mode = true},
                 code_action_lightbulb = {enable = true},
-                ui = {border = "double"}
+                ui = {border = "double"},
+                finder = {max_height = 0.6, force_max_height = true}
             })
         end
     }, {
         "ahmedkhalf/lsp-rooter.nvim",
-        config = function()
-            require("lsp-rooter").setup {
-                -- your configuration comes here
-                -- or leave it empty to use the default settings
-                -- refer to the configuration section below
-            }
-        end
+        config = function() require("lsp-rooter").setup {} end
     }, {"segeljakt/vim-silicon"}, {
         "iamcco/markdown-preview.nvim",
         lazy = true,
