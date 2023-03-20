@@ -1,6 +1,6 @@
 -- Additional Plugins
 lvim.plugins = {
-    {"VonHeikemen/fine-cmdline.nvim"}, {
+    {
         "giusgad/pets.nvim",
         dependencies = {"MunifTanjim/nui.nvim", "edluffy/hologram.nvim"},
         config = function() require("pets").setup() end
@@ -26,9 +26,6 @@ lvim.plugins = {
                 finder = {max_height = 0.6, force_max_height = true}
             })
         end
-    }, {
-        "ahmedkhalf/lsp-rooter.nvim",
-        config = function() require("lsp-rooter").setup {} end
     }, {"segeljakt/vim-silicon"}, {
         "iamcco/markdown-preview.nvim",
         lazy = true,
