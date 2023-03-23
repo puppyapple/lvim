@@ -36,7 +36,7 @@ formatters.setup {
 
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
-    {command = "flake8"},
+    {command = "ruff"},
     {command = "shellcheck", args = {"--severity", "warning"}},
     {command = "codespell", filetypes = {"javascript", "python"}}
 }

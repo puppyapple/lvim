@@ -14,8 +14,7 @@
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = { "*.json", "*.jsonc" },
 --   -- enable wrap mode for json files only
---   command = "setlocal wrap",
--- })
+--   command = "setlocal wrap", })
 -- vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "zsh",
 -- ... your lualine config
@@ -25,8 +24,8 @@
 --   end,
 -- })
 reload "user.plugins"
+reload "user.neotest"
 reload "user.options"
-reload "user.lsp"
 reload "user.pydocstring"
 reload "user.scrollbar"
 reload "user.dap"
@@ -36,5 +35,6 @@ reload "user.inlay-hints"
 reload "user.ufo"
 reload "user.themes"
 reload "user.lualine"
+reload "user.lsp"
 reload "user.keymaps"
 reload "user.indent"
