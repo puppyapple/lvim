@@ -1,6 +1,12 @@
 -- Additional Plugins
 lvim.plugins = {
-    {"nvim-neotest/neotest-python"}, {"nvim-neotest/neotest"}, {
+    {
+        'HallerPatrick/py_lsp.nvim',
+        config = function()
+            require("py_lsp").setup({default_venv_name = "py38"})
+        end
+    }, {'folke/tokyonight.nvim'}, {"nvim-neotest/neotest-python"},
+    {"nvim-neotest/neotest"}, {
         "giusgad/pets.nvim",
         dependencies = {"MunifTanjim/nui.nvim", "edluffy/hologram.nvim"},
         config = function() require("pets").setup() end

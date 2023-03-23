@@ -15,8 +15,12 @@ vim.keymap.set("o", "H", "^")
 vim.keymap.set("o", "L", "$")
 
 -- Use which-key to add extra bindings with the leader-key prefix
+lvim.builtin.which_key.mappings["i"] = {
+    ":PyLspFindVenvs<CR>", "Select python env"
+}
+
 lvim.builtin.which_key.mappings["j"] = {":bnext<CR>", "Next Buffer"}
-lvim.builtin.which_key.mappings["k"] = {":bprevious<CR>", "Next Buffer"}
+lvim.builtin.which_key.mappings["k"] = {":bprevious<CR>", "Previous Buffer"}
 lvim.builtin.which_key.mappings["P"] = {
     "<cmd>Telescope projects<CR>", "Projects"
 }
