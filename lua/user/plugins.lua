@@ -3,7 +3,10 @@ lvim.plugins = {
     {
         'HallerPatrick/py_lsp.nvim',
         config = function()
-            require("py_lsp").setup({default_venv_name = "py38"})
+            require("py_lsp").setup({
+                host_python = "/home/puppyapple/anaconda3/bin",
+                source_strategies = {"conda"}
+            })
         end
     }, {'folke/tokyonight.nvim'}, {"nvim-neotest/neotest-python"},
     {"nvim-neotest/neotest"}, {
