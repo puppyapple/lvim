@@ -1,3 +1,50 @@
+-- lvim.autocommands = {
+--     {
+--         {"BufEnter"}, {
+--             pattern = "*",
+--             desc = "Disable syntax highlighting in files larger than 1MB",
+--             callback = function(args)
+--                 local highlighter = require "vim.treesitter.highlighter"
+--                 local ts_was_active = highlighter.active[args.buf]
+--                 local file_size = vim.fn.getfsize(args.file)
+--                 if (file_size > 1024 * 1024) then
+--                     vim.cmd("TSBufDisable highlight")
+--                     vim.cmd("syntax off")
+--                     vim.cmd("syntax clear")
+--                     vim.cmd("IlluminatePauseBuf")
+--                     vim.cmd("IndentBlanklineDisable")
+--                     vim.cmd("NoMatchParen")
+--                     if (ts_was_active) then
+--                         vim.notify(
+--                             "File larger than 1MB, turned off syntax highlighting")
+--                     end
+--                 end
+--             end
+--         }
+--     }
+-- }
+-- vim.cmd [[
+-- " disable syntax highlighting in big files
+-- function! DisableSyntaxTreesitter()
+--     echo("Big file, disabling syntax, treesitter and folding")
+--     if exists(':TSBufDisable')
+--         exec 'TSBufDisable autotag'
+--         exec 'TSBufDisable highlight'
+--     endif
+--     set foldmethod=manual
+--     syntax clear
+--     syntax off
+--     filetype off
+--     set noundofile
+--     set noswapfile
+--     set noloadplugins
+--     set lazyredraw
+-- endfunction
+-- augroup BigFileDisable
+--     autocmd!
+--     autocmd BufReadPre,FileReadPre * if getfsize(expand("%")) > 1024 * 1024 | exec DisableSyntaxTreesitter() | endif
+-- augroup END
+--   ]]
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedark"
@@ -31,6 +78,8 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
 vim.opt.smartindent = true
+vim.opt.clipboard = "unnamedplus"
+vim.opt.mouse = "a"
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
@@ -67,3 +116,26 @@ end
 -- lvim.builtin.treesitter.highlight.enable = true
 local options = {scrolloff = 0, sidescrolloff = 8, updatetime = 100}
 for k, v in pairs(options) do vim.opt[k] = v end
+
+-- vim.g.clipboard = {
+--     name = "my",
+--     copy = {
+--         ['+'] = 'kitty +kitten clipboard',
+--         ['*'] = 'kitty +kitten clipboard'
+--     },
+--     paste = {
+--         ['+'] = 'kitty +kitten clipboard --get-clipboard',
+--         ['*'] = 'kitty +kitten clipboard --get-clipboard'
+--     }
+-- }
+-- vim.g.clipboard = {
+--     name = 'myClipboard',
+--     copy = {
+--         ['+'] = {'tmux', 'load-buffer', '-'},
+--         ['*'] = {'tmux', 'load-buffer', '-'}
+--     },
+--     paste = {
+--         ['+'] = {'tmux', 'save-buffer', '-'},
+--         ['*'] = {'tmux', 'save-buffer', '-'}
+--     }
+-- }

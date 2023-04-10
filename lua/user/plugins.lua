@@ -1,10 +1,11 @@
 -- Additional Plugins
 lvim.plugins = {
-    {
+    {"ojroques/vim-oscyank", branch = "main"},
+    {"ellisonleao/glow.nvim", config = true, cmd = "Glow"}, {
         'HallerPatrick/py_lsp.nvim',
         config = function()
             require("py_lsp").setup({
-                host_python = "/home/puppyapple/anaconda3/bin",
+                -- host_python = "/home/puppyapple/anaconda3/bin",
                 source_strategies = {"conda"}
             })
         end
@@ -31,8 +32,8 @@ lvim.plugins = {
             saga.setup({
                 symbol_in_winbar = {enable = true, color_mode = true},
                 code_action_lightbulb = {enable = true},
-                ui = {border = "double"},
-                finder = {max_height = 0.6, force_max_height = true}
+                ui = {border = "double"}
+                -- finder = {max_height = 0.6, force_max_height = true}
             })
         end
     }, {"segeljakt/vim-silicon"}, {

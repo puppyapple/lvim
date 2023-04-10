@@ -13,7 +13,8 @@ lvim.keys.normal_mode["<A-k>"] = ":m-2<cr>"
 -- lvim.keys.normal_mode["<tab>"] = ":bnext<CR>"
 vim.keymap.set("o", "H", "^")
 vim.keymap.set("o", "L", "$")
-
+vim.keymap.set('v', 'Y', '<Plug>OSCYankVisual')
+-- vim.api.nvim_set_keymap("v", "y", '"+y', {noremap = true})
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["i"] = {
     ":PyLspFindVenvs<CR>", "Select python env"
