@@ -35,11 +35,11 @@ lvim.builtin.lualine.style = "lvim"
 lvim.builtin.lualine.sections.lualine_c = {
   components.diff, python_env, components.filename
 }
-lvim.builtin.lualine.sections.lualine_z = { 'os.date("%b%d|%A|%H:%M:%S")' }
+lvim.builtin.lualine.sections.lualine_z = { 'os.date("%D|%A|%H:%M:%S")' }
 lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
 -- lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
 -- lvim.builtin.lualine.options.component_separators = { left = '', right = '' }
-lvim.builtin.lualine.options.component_separators = "|"
+lvim.builtin.lualine.options.component_separators = ""
 -- separators = {
 --   rounded = { '', '' },
 --   blank = { '', '' },
