@@ -1,12 +1,22 @@
 -- Additional Plugins
 lvim.plugins = {
   {
+    'Exafunction/codeium.vim',
+    config = function()
+      -- Change '<C-g>' here to any keycode you like.
+      vim.keymap.set('i', '<S-i>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+      vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
+      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
+      vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+    end
+  },
+  {
     "max397574/better-escape.nvim",
     config = function()
       require("better_escape").setup({
-        mapping = { "jk", "jj" }, -- a table with mappings to use
+        mapping = { "jk", "jj" },   -- a table with mappings to use
         timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
-        clear_empty_lines = false, -- clear line after escaping if there is only whitespace
+        clear_empty_lines = false,  -- clear line after escaping if there is only whitespace
         keys = "<Esc>"
       })
     end,
@@ -103,14 +113,14 @@ lvim.plugins = {
         '<C-u>', '<C-d>', '<C-b>', '<C-f>', '<C-y>', '<C-e>', 'zt',
         'zz', 'zb'
       },
-      hide_cursor = true,                    -- Hide cursor while scrolling
-      stop_eof = true,                       -- Stop at <EOF> when scrolling downwards
-      use_local_scrolloff = false,           -- Use the local scope of scrolloff instead of the global scope
-      respect_scrolloff = false,             -- Stop scrolling when the cursor reaches the scrolloff margin of the file
-      cursor_scrolls_alone = true,           -- The cursor will keep on scrolling even if the window cannot scroll further
-      easing_function = nil,                 -- Default easing function
-      pre_hook = nil,                        -- Function to run before the scrolling animation starts
-      post_hook = nil                        -- Function to run after the scrolling animation ends
+      hide_cursor = true,          -- Hide cursor while scrolling
+      stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+      use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
+      respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+      cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+      easing_function = nil,       -- Default easing function
+      pre_hook = nil,              -- Function to run before the scrolling animation starts
+      post_hook = nil              -- Function to run after the scrolling animation ends
     })
   end
 }, { "metakirby5/codi.vim",         cmd = "Codi" }, {
@@ -156,7 +166,7 @@ lvim.plugins = {
   "folke/todo-comments.nvim",
   event = "BufRead",
   config = function() require("todo-comments").setup() end
-}, { "nvim-treesitter/playground", event = "BufRead" },   -- {
+}, { "nvim-treesitter/playground", event = "BufRead" }, -- {
   { "navarasu/onedark.nvim",      name = "onedark" }, { "EdenEast/nightfox.nvim" }
   -- {
   --   "numirias/semshi",

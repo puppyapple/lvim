@@ -27,20 +27,58 @@ local python_env = {
     end
     return ""
   end,
-  color = { fg = colors.green },
+  color = { fg = colors.orange },
   cond = conditions.hide_in_width
 }
 lvim.builtin.lualine.style = "lvim"
--- lvim.builtin.lualine.sections.lualine_a = { "mode" }
+local mode = {
+  function()
+    return '👽'
+  end,
+  padding = { left = 0, right = 0 },
+  color = {},
+  cond = nil,
+  separator = { left = '', right = '' },
+  left_padding = 2
+}
+
+local lsp = {
+  function()
+    local msg = 'No Active Lsp'
+    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local clients = vim.lsp.get_active_clients()
+    if next(clients) == nil then
+      return msg
+    end
+    for _, client in ipairs(clients) do
+      local filetypes = client.config.filetypes
+      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+        return client.name
+      end
+    end
+    return msg
+  end,
+  icon = ' LSP:',
+  color = { fg = '#ffffff', gui = 'bold' }
+}
+
+components.lsp = lsp
+components.branch.color = { fg = colors.purple }
+components.filename.color = { fg = colors.cyan }
+components.lsp.color = { fg = colors.yellow }
+components.location.color = { fg = colors.blue }
+components.spaces.color = { fg = colors.violet }
+
+lvim.builtin.lualine.sections.lualine_a = { mode }
+lvim.builtin.lualine.sections.lualine_b = { components.branch }
 lvim.builtin.lualine.sections.lualine_c = {
   components.diff, python_env, components.filename
 }
-lvim.builtin.lualine.sections.lualine_z = { 'os.date("%D|%A|%H:%M:%S")' }
-lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
+lvim.builtin.lualine.sections.lualine_z = {
+  { 'os.date("%H:%M:%S")', separator = { left = '', right = '' }, left_padding = 2 },
+}
+-- lvim.builtin.lualine.sections.lualine_a.seperator = { left = '', right = '' }
 -- lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
 -- lvim.builtin.lualine.options.component_separators = { left = '', right = '' }
-lvim.builtin.lualine.options.component_separators = ""
--- separators = {
---   rounded = { '', '' },
---   blank = { '', '' },
--- }
+lvim.builtin.lualine.options.section_separators = { left = '', right = '' }
+lvim.builtin.lualine.options.component_separators = "|"
