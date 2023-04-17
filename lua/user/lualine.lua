@@ -42,27 +42,27 @@ local mode = {
   left_padding = 2
 }
 
-local lsp = {
-  function()
-    local msg = 'No Active Lsp'
-    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-    local clients = vim.lsp.get_active_clients()
-    if next(clients) == nil then
-      return msg
-    end
-    for _, client in ipairs(clients) do
-      local filetypes = client.config.filetypes
-      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return client.name
-      end
-    end
-    return msg
-  end,
-  icon = ' LSP:',
-  color = { fg = '#ffffff', gui = 'bold' }
-}
+-- local lsp = {
+--   function()
+--     local msg = 'No Active Lsp'
+--     local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+--     local clients = vim.lsp.get_active_clients()
+--     if next(clients) == nil then
+--       return msg
+--     end
+--     for _, client in ipairs(clients) do
+--       local filetypes = client.config.filetypes
+--       if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+--         return client.name
+--       end
+--     end
+--     return msg
+--   end,
+--   icon = ' LSP:',
+--   color = { fg = '#ffffff', gui = 'bold' }
+-- }
 
-components.lsp = lsp
+-- components.lsp = lsp
 components.branch.color = { fg = colors.purple }
 components.filename.color = { fg = colors.cyan }
 components.lsp.color = { fg = colors.yellow }

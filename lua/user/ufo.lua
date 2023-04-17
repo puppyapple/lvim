@@ -1,6 +1,6 @@
 vim.o.foldcolumn = '0' -- '0' is not bad
 vim.o.foldnestmax = '0'
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
@@ -11,11 +11,11 @@ vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = true
+  dynamicRegistration = false,
+  lineFoldingOnly = true
 }
-local language_servers = {"pyright", "yamlls", "jsonls"} -- like {'gopls', 'clangd'}
+local language_servers = { "pyright", "jsonls" } -- like {'gopls', 'clangd'}
 for _, ls in ipairs(language_servers) do
-    require('lspconfig')[ls].setup({capabilities = capabilities})
+  require('lspconfig')[ls].setup({ capabilities = capabilities })
 end
 require('ufo').setup()
