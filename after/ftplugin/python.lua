@@ -24,7 +24,8 @@ local opts = {
   single_file_support = true
 }
 
-require("lvim.lsp.manager").setup("pyright", opts)
+require('lspconfig')["pyright"].setup({ opts })
+-- require("lvim.lsp.manager").setup("pyright", opts)
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup { { command = "black", filetypes = { "python" } } }
 
