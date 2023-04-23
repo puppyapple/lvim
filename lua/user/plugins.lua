@@ -1,6 +1,13 @@
 -- Additional Plugins
 lvim.plugins = {
   {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make',
+    config = function()
+      require('telescope').load_extension('fzf')
+    end
+  },
+  {
     'Exafunction/codeium.vim',
     config = function()
       -- Change '<C-g>' here to any keycode you like.
