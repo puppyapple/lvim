@@ -24,6 +24,7 @@
 --   end,
 -- })
 reload "user.plugins"
+reload "user.themes"
 reload "user.neotest"
 reload "user.options"
 reload "user.pydocstring"
@@ -32,7 +33,6 @@ reload "user.dap"
 reload "user.neoscroll"
 reload "user.inlay-hints"
 reload "user.ufo"
-reload "user.themes"
 reload "user.lualine"
 reload "user.keymaps"
 reload "user.indent"

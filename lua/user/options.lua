@@ -63,15 +63,15 @@ lvim.lsp.installer.setup.automatic_installation = true
 -- table.insert(lvim.builtin.cmp.sources, {name = "nvim_lsp_signature_help"})
 local cmp = require("cmp")
 lvim.builtin.cmp.sorting = {
-    comparators = {
-        cmp.config.compare.offset, cmp.config.compare.exact,
-        cmp.config.compare.score, require"cmp-under-comparator".under,
-        cmp.config.compare.recently_used, cmp.config.compare.locality,
-        cmp.config.compare.kind, cmp.config.compare.sort_text,
-        cmp.config.compare.length, cmp.config.compare.order
-    }
+  comparators = {
+    cmp.config.compare.offset, cmp.config.compare.exact,
+    cmp.config.compare.score, require "cmp-under-comparator".under,
+    cmp.config.compare.recently_used, cmp.config.compare.locality,
+    cmp.config.compare.kind, cmp.config.compare.sort_text,
+    cmp.config.compare.length, cmp.config.compare.order
+  }
 }
-vim.highlight.on_yank {timeout = 2000}
+vim.highlight.on_yank { timeout = 2000 }
 vim.opt.cursorcolumn = true
 vim.opt.relativenumber = true
 vim.opt.foldmethod = "expr"
@@ -93,28 +93,29 @@ lvim.builtin.nvimtree.setup.renderer.highlight_git = true
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 lvim.builtin.nvimtree.setup.renderer.icons.git_placement = "before"
 lvim.builtin.nvimtree.setup.renderer.icons.glyphs.git = {
-    unstaged = "✗",
-    staged = "✓",
-    unmerged = "",
-    renamed = "➜",
-    untracked = "★",
-    deleted = "",
-    ignored = "◌"
+  unstaged = "✗",
+  staged = "✓",
+  unmerged = "",
+  renamed = "➜",
+  untracked = "★",
+  deleted = "",
+  ignored = "◌"
 }
 lvim.builtin.nvimtree.setup.renderer.indent_markers.enable = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-    "bash", "c", "javascript", "json", "lua", "python", "typescript", "tsx",
-    "css", "rust", "java", "yaml"
+  "bash", "c", "javascript", "json", "lua", "python", "typescript", "tsx",
+  "css", "rust", "java", "yaml"
 }
 
-lvim.builtin.treesitter.ignore_install = {"haskell"}
+-- vim.api.nvim_set_hl(0, "Normal", { fg = "#000000", bg = "#000000" })
+lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.lsp.on_attach_callback = function(client, bufnr)
-    require"lsp_signature".on_attach()
+  require "lsp_signature".on_attach()
 end
 -- lvim.builtin.treesitter.highlight.enable = true
-local options = {scrolloff = 0, sidescrolloff = 8, updatetime = 100}
+local options = { scrolloff = 0, sidescrolloff = 8, updatetime = 100 }
 for k, v in pairs(options) do vim.opt[k] = v end
 
 -- vim.g.clipboard = {
