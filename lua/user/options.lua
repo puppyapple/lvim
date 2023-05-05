@@ -1,50 +1,3 @@
--- lvim.autocommands = {
---     {
---         {"BufEnter"}, {
---             pattern = "*",
---             desc = "Disable syntax highlighting in files larger than 1MB",
---             callback = function(args)
---                 local highlighter = require "vim.treesitter.highlighter"
---                 local ts_was_active = highlighter.active[args.buf]
---                 local file_size = vim.fn.getfsize(args.file)
---                 if (file_size > 1024 * 1024) then
---                     vim.cmd("TSBufDisable highlight")
---                     vim.cmd("syntax off")
---                     vim.cmd("syntax clear")
---                     vim.cmd("IlluminatePauseBuf")
---                     vim.cmd("IndentBlanklineDisable")
---                     vim.cmd("NoMatchParen")
---                     if (ts_was_active) then
---                         vim.notify(
---                             "File larger than 1MB, turned off syntax highlighting")
---                     end
---                 end
---             end
---         }
---     }
--- }
--- vim.cmd [[
--- " disable syntax highlighting in big files
--- function! DisableSyntaxTreesitter()
---     echo("Big file, disabling syntax, treesitter and folding")
---     if exists(':TSBufDisable')
---         exec 'TSBufDisable autotag'
---         exec 'TSBufDisable highlight'
---     endif
---     set foldmethod=manual
---     syntax clear
---     syntax off
---     filetype off
---     set noundofile
---     set noswapfile
---     set noloadplugins
---     set lazyredraw
--- endfunction
--- augroup BigFileDisable
---     autocmd!
---     autocmd BufReadPre,FileReadPre * if getfsize(expand("%")) > 1024 * 1024 | exec DisableSyntaxTreesitter() | endif
--- augroup END
---   ]]
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedark"
@@ -52,12 +5,14 @@ lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.terminal.direction = "horizontal"
 lvim.builtin.terminal.size = 15
 lvim.builtin.bufferline.options.separator_style = "slant"
+lvim.builtin.bufferline.options.indicator.style = "underline"
 lvim.builtin.bufferline.options.always_show_bufferline = true
-lvim.lsp.diagnostics.virtual_text = true
+
+vim.diagnostic.config({ virtual_text = true })
 lvim.builtin.cmp.cmdline.enable = true
 lvim.builtin.cmp.experimental.ghost_text = true
 lvim.builtin.breadcrumbs.active = false
-lvim.lsp.diagnostics.update_in_insert = true
+vim.diagnostic.config({ update_in_insert = true })
 lvim.lsp.installer.setup.automatic_installation = true
 -- table.insert(lvim.builtin.cmp.sources, {name = "pandoc_references"})
 -- table.insert(lvim.builtin.cmp.sources, {name = "nvim_lsp_signature_help"})

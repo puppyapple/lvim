@@ -1,6 +1,15 @@
 -- Additional Plugins
 lvim.plugins = {
   {
+    "Pocco81/auto-save.nvim",
+    config = function()
+      require("auto-save").setup {
+        -- your config goes here
+        -- or just leave it empty :)
+      }
+    end,
+  },
+  {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
     config = function()
@@ -11,7 +20,7 @@ lvim.plugins = {
     'Exafunction/codeium.vim',
     config = function()
       -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set('i', '<S-i>', function() return vim.fn['codeium#Accept']() end, { expr = true })
+      vim.keymap.set('i', '<c-i>', function() return vim.fn['codeium#Accept']() end, { expr = true })
       vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
       vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
       vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
