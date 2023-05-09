@@ -1,14 +1,14 @@
 -- Additional Plugins
 lvim.plugins = {
-  {
-    "Pocco81/auto-save.nvim",
-    config = function()
-      require("auto-save").setup {
-        -- your config goes here
-        -- or just leave it empty :)
-      }
-    end,
-  },
+  -- {
+  --   "Pocco81/auto-save.nvim",
+  --   config = function()
+  --     require("auto-save").setup {
+  --       enabled = false,
+  --       debounce_delay = 1000
+  --     }
+  --   end,
+  -- },
   {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
