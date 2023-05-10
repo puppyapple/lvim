@@ -24,6 +24,7 @@
 --   end,
 -- })
 reload "user.plugins"
+reload "user.markdown-preview"
 reload "user.themes"
 reload "user.neotest"
 reload "user.options"
@@ -36,3 +37,4 @@ reload "user.ufo"
 reload "user.lualine"
 reload "user.keymaps"
 reload "user.indent"
+reload "user.hlargs"

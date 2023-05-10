@@ -104,15 +104,6 @@ lvim.plugins = {
   config = function() require('git-conflict').setup() end
 }, {
   "m-demare/hlargs.nvim",
-  config = function()
-    require("hlargs").setup {
-      color = '#D49DA5',
-      -- use_colorpalette = true,
-      paint_arg_declarations = false,
-      extras = { named_parameters = false },
-      excluded_argnames = { usages = { python = { 'self', 'cls' } } }
-    }
-  end
 }, { "folke/trouble.nvim",       cmd = "TroubleToggle" },
   { "mfussenegger/nvim-dap-python" }, {
   "ellisonleao/glow.nvim",
