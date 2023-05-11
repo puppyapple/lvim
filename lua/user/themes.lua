@@ -120,6 +120,7 @@ require("tokyonight").setup {
     hl.Hlargs = { fg = "#D49DA5" }
     hl.DiagnosticVirtualTextHint = { bg = util.darken(c.magenta, 0.1), fg = c.magenta }
     hl.DiagnosticVirtualTextError = { bg = util.darken("#ff0000", 0.1), fg = "#ff0000" }
+    hl.Error = { fg = "#ff0000" }
     hl["@string.documentation"] = { fg = c.green }
     hl["@function"] = { fg = "#2c56ff" }
     hl["@constructor"] = { fg = c.yellow, bold = true }
@@ -127,8 +128,9 @@ require("tokyonight").setup {
     hl["@field"] = { fg = "#10deb5" }
     hl["@variable"] = { fg = "#7b64ff" }
     hl["@type"] = { fg = "#fa0265" }
+    hl["@type.builtin"] = { fg = c.yellow }
     hl["@comment"] = { fg = "#278505" }
-    hl["@keyword"] = { style = { italic = true } }
+    hl["@keyword"] = { fg = "#d56ee0", style = { italic = true } }
     hl["@keyword.operator"] = { fg = c.cyan, style = { italic = true } }
     hl["@keyword.return"] = { fg = "#d56ee0", style = { italic = true } }
     hl["@method.call"] = { fg = "#3497d0", style = { italic = true } }
