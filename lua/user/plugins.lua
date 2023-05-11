@@ -24,6 +24,7 @@ lvim.plugins = {
       vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
       vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
       vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
+      vim.g.codeium_filetypes = { markdown = false }
     end
   },
   {
@@ -148,7 +149,8 @@ lvim.plugins = {
     local tabnine = require "cmp_tabnine.config"
     tabnine:setup {
       max_lines = 1000,
-      max_num_results = 10,
+      max_num_results = 5,
+      ignored_file_types = { markdown = true },
       sort = true,
       run_on_every_keystroke = true
     }
