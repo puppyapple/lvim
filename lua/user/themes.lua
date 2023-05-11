@@ -129,7 +129,7 @@ require("tokyonight").setup {
     hl["@variable"] = { fg = "#7b64ff" }
     hl["@type"] = { fg = "#fa0265" }
     hl["@type.builtin"] = { fg = c.yellow }
-    hl["@comment"] = { fg = "#278505" }
+    hl["@constant.builtin"] = { fg = c.yellow }
     hl["@keyword"] = { fg = "#d56ee0", style = { italic = true } }
     hl["@keyword.operator"] = { fg = c.cyan, style = { italic = true } }
     hl["@keyword.return"] = { fg = "#d56ee0", style = { italic = true } }
