@@ -113,22 +113,28 @@ require('onedark').setup {
     background = true -- use background color for virtual text
   }
 }
-
+local util = require("tokyonight.util")
 require("tokyonight").setup {
-  style = "storm",
+  style = "night",
   on_highlights = function(hl, c)
+    hl.Hlargs = { fg = "#D49DA5" }
+    hl.DiagnosticVirtualTextHint = { bg = util.darken(c.magenta, 0.1), fg = c.magenta }
+    hl.DiagnosticVirtualTextError = { bg = util.darken("#ff0000", 0.1), fg = "#ff0000" }
+    hl["@string.documentation"] = { fg = c.green }
     hl["@function"] = { fg = "#2c56ff" }
-    hl["@parameter"] = { style = { italic = true } }
+    hl["@constructor"] = { fg = c.yellow, bold = true }
+    hl["@parameter"] = { fg = "#fc589a", style = { italic = true } }
     hl["@field"] = { fg = "#10deb5" }
     hl["@variable"] = { fg = "#7b64ff" }
-    hl["@type"] = { fg = "#e00f9a" }
+    hl["@type"] = { fg = "#fa0265" }
     hl["@comment"] = { fg = "#278505" }
     hl["@keyword"] = { style = { italic = true } }
-    hl["@keyword.operator"] = { style = { italic = true } }
-    hl["@function.builtin"] = { style = { italic = true } }
-    hl["@repeat"] = { style = { italic = true } }
-    hl["@conditional"] = { style = { italic = true } }
-    hl["@include"] = { style = { italic = true } }
+    hl["@keyword.operator"] = { fg = c.cyan, style = { italic = true } }
+    hl["@keyword.return"] = { fg = "#d56ee0", style = { italic = true } }
+    hl["@method.call"] = { fg = "#3497d0", style = { italic = true } }
+    hl["@repeat"] = { style = { fg = c.cyan, italic = true } }
+    hl["@include"] = { style = { fg = c.cyan, italic = true } }
+    hl["@conditional"] = { style = { fg = c.cyan, italic = true } }
     hl["@variable.builtin"] = { fg = "#e5c07b" }
     hl["@property"] = { fg = "red", style = { italic = true } }
     hl["@local.definition"] = { fg = "red", style = { italic = true } }

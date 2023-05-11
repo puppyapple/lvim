@@ -1,6 +1,6 @@
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedark"
+lvim.colorscheme = "tokyonight"
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.terminal.direction = "horizontal"
 lvim.builtin.terminal.size = 15
