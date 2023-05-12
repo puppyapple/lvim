@@ -73,6 +73,7 @@ require('onedark').setup {
 -- Tokyonight theme
 ----------------------------------------------------------------------------------------------------------------
 local util = require("tokyonight.util")
+
 require("tokyonight").setup {
   style = "night",
   styles = {
@@ -86,6 +87,9 @@ require("tokyonight").setup {
     sidebars = "transparent", -- style for sidebars, see below
     floats = "dark",          -- style for floating windows
   },
+  on_colors = function(colors)
+    colors.border = "#565f89"
+  end,
   on_highlights = function(hl, c)
     hl.Hlargs = { fg = "#D49DA5" }
     hl.DiagnosticVirtualTextHint = { bg = util.darken(c.magenta, 0.1), fg = c.magenta }
