@@ -105,12 +105,12 @@ require("tokyonight").setup {
     hl["@type.builtin"] = { fg = c.yellow }
     hl["@constant.builtin"] = { fg = c.yellow }
     hl["@keyword"] = { fg = "#d56ee0", style = { italic = true } }
-    hl["@keyword.operator"] = { fg = c.cyan, style = { italic = true } }
+    hl["@keyword.operator"] = { fg = "#d56ee0", style = { italic = true } }
     hl["@keyword.return"] = { fg = "#d56ee0", style = { italic = true } }
     hl["@method.call"] = { fg = "#3497d0", style = { italic = true } }
     hl["@repeat"] = { style = { fg = c.cyan, italic = true } }
     hl["@include"] = { style = { fg = c.cyan, italic = true } }
-    hl["@conditional"] = { style = { fg = c.cyan, italic = true } }
+    hl["@conditional"] = { style = { fg = "#d56ee0", italic = true } }
     hl["@variable.builtin"] = { fg = "#e5c07b" }
     hl["@property"] = { fg = "red", style = { italic = true } }
     hl["@local.definition"] = { fg = "red", style = { italic = true } }
