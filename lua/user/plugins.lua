@@ -68,6 +68,7 @@ lvim.plugins = {
   config = function()
     local saga = require("lspsaga")
     saga.setup({
+      diagnostic = { on_insert = false },
       symbol_in_winbar = { enable = true, color_mode = true },
       code_action_lightbulb = { enable = true },
       ui = { border = "double" }
