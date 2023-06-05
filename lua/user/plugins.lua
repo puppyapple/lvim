@@ -1,14 +1,5 @@
 -- Additional Plugins
 lvim.plugins = {
-  -- {
-  --   "Pocco81/auto-save.nvim",
-  --   config = function()
-  --     require("auto-save").setup {
-  --       enabled = false,
-  --       debounce_delay = 1000
-  --     }
-  --   end,
-  -- },
   {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
@@ -38,21 +29,17 @@ lvim.plugins = {
       })
     end,
   },
-  { "ojroques/vim-oscyank",  branch = "main" },
-  { "ellisonleao/glow.nvim", config = true,  cmd = "Glow" }, {
-  'HallerPatrick/py_lsp.nvim',
-  config = function()
-    require("py_lsp").setup({
-      -- host_python = "/home/puppyapple/anaconda3/bin",
-      source_strategies = { "conda" }
-    })
-  end
-}, { 'folke/tokyonight.nvim' }, { "nvim-neotest/neotest-python" },
+  { "ojroques/vim-oscyank", branch = "main" },
+  {
+    'HallerPatrick/py_lsp.nvim',
+    config = function()
+      require("py_lsp").setup({
+        -- host_python = "/home/puppyapple/anaconda3/bin",
+        source_strategies = { "conda" }
+      })
+    end
+  }, { 'folke/tokyonight.nvim' }, { "nvim-neotest/neotest-python" },
   { "nvim-neotest/neotest" }, {
-  "giusgad/pets.nvim",
-  dependencies = { "MunifTanjim/nui.nvim", "edluffy/hologram.nvim" },
-  config = function() require("pets").setup() end
-}, {
   "ray-x/lsp_signature.nvim",
   config = function()
     require "lsp_signature".setup({
@@ -101,10 +88,6 @@ lvim.plugins = {
 }, { 'kevinhwang91/nvim-ufo',    dependencies = 'kevinhwang91/promise-async' },
   { "lvimuser/lsp-inlayhints.nvim" }, { "petertriho/nvim-scrollbar" },
   { "TimUntersberger/neogit" }, {
-  "akinsho/git-conflict.nvim",
-  version = "*",
-  config = function() require('git-conflict').setup() end
-}, {
   "m-demare/hlargs.nvim",
 }, { "folke/trouble.nvim",       cmd = "TroubleToggle" },
   { "mfussenegger/nvim-dap-python" }, {
@@ -133,15 +116,8 @@ lvim.plugins = {
     })
   end
 }, { "metakirby5/codi.vim",         cmd = "Codi" }, {
-  "simrat39/symbols-outline.nvim",
-  config = function() require('symbols-outline').setup() end
-}, {
   "ggandor/leap.nvim",
   config = function() require("leap").add_default_mappings() end
-}, {
-  "dccsillag/magma-nvim",
-  commit = "0ab5ef297bf98d69f03bb069533444c14cd53383",
-  build = ":UpdateRemotePlugins"
 }, { "jc-doyle/cmp-pandoc-references", dependencies = "hrsh7th/nvim-cmp" }, {
   "tzachar/cmp-tabnine",
   build = "./install.sh",
@@ -166,7 +142,7 @@ lvim.plugins = {
     vim.g.rnvimr_pick_enable = 1
     vim.g.rnvimr_bw_enable = 1
   end
-}, { "sindrets/diffview.nvim",  event = "BufRead" }, {
+}, {
   "andymass/vim-matchup",
   event = "CursorMoved",
   config = function()
@@ -177,13 +153,4 @@ lvim.plugins = {
   event = "BufRead",
   config = function() require("todo-comments").setup() end
 }, { "nvim-treesitter/playground", event = "BufRead" }, -- {
-  { "navarasu/onedark.nvim",      name = "onedark" }, { "EdenEast/nightfox.nvim" }
-  -- {
-  --   "numirias/semshi",
-  --   name = "semshi",
-  --   -- run = ":hi semshiGlobal ctermfg=red guifg=#e06c75",
-  --   config = function()
-  --     -- vim.cmd("hi def semshiGlobal guifg=#2c56ff")
-  --   end
-  -- },
-}
+  { "navarasu/onedark.nvim",      name = "onedark" } }
