@@ -85,8 +85,8 @@ lvim.plugins = {
         augroup END
     ]])
   end
-}, { 'kevinhwang91/nvim-ufo',    dependencies = 'kevinhwang91/promise-async' },
-  { "lvimuser/lsp-inlayhints.nvim" }, { "petertriho/nvim-scrollbar" },
+}, { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
+  { "petertriho/nvim-scrollbar" },
   { "TimUntersberger/neogit" }, {
   "m-demare/hlargs.nvim",
 }, { "folke/trouble.nvim",       cmd = "TroubleToggle" },
