@@ -143,12 +143,6 @@ lvim.plugins = {
     vim.g.rnvimr_bw_enable = 1
   end
 }, {
-  "andymass/vim-matchup",
-  event = "CursorMoved",
-  config = function()
-    vim.g.matchup_matchparen_offscreen = { method = "popup" }
-  end
-}, {
   "folke/todo-comments.nvim",
   event = "BufRead",
   config = function() require("todo-comments").setup() end
