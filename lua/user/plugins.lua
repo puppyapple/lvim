@@ -3,6 +3,28 @@ lvim.plugins = {
   "ChristianChiarulli/swenv.nvim",
   "stevearc/dressing.nvim",
   {
+    'rmagatti/goto-preview',
+    config = function()
+      require('goto-preview').setup {}
+    end
+  },
+  {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {
+      -- configurations go here
+      modifiers = {
+        dirname = ":s?.*??",
+        -- dirname = ":~:.",
+      },
+    },
+  },
+  {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
     config = function()
@@ -32,15 +54,6 @@ lvim.plugins = {
     end,
   },
   { "ojroques/vim-oscyank", branch = "main" },
-  -- {
-  --   'HallerPatrick/py_lsp.nvim',
-  --   config = function()
-  --     require("py_lsp").setup({
-  --       -- host_python = "/home/puppyapple/anaconda3/bin",
-  --       source_strategies = { "conda" }
-  --     })
-  --   end
-  -- },
   { 'folke/tokyonight.nvim' }, { "nvim-neotest/neotest-python" },
   { "nvim-neotest/neotest" }, {
   "ray-x/lsp_signature.nvim",
@@ -51,21 +64,23 @@ lvim.plugins = {
       toggle_key = "<C-x>"
     })
   end
-}, { "itchyny/vim-cursorword" }, { "lukas-reineke/cmp-under-comparator" }, {
-  "glepnir/lspsaga.nvim",
-  -- branch = "main",
-  event = "BufRead",
-  config = function()
-    local saga = require("lspsaga")
-    saga.setup({
-      diagnostic = { on_insert = false },
-      symbol_in_winbar = { enable = true, color_mode = true },
-      code_action_lightbulb = { enable = true },
-      ui = { border = "double" }
-      -- finder = {max_height = 0.6, force_max_height = true}
-    })
-  end
-}, { "segeljakt/vim-silicon" }, {
+}, { "itchyny/vim-cursorword" }, { "lukas-reineke/cmp-under-comparator" },
+  --   {
+  --   "glepnir/lspsaga.nvim",
+  --   -- branch = "main",
+  --   event = "BufRead",
+  --   config = function()
+  --     local saga = require("lspsaga")
+  --     saga.setup({
+  --       -- diagnostic = { on_insert = false },
+  --       -- symbol_in_winbar = { enable = true, color_mode = true },
+  --       -- code_action_lightbulb = { enable = true },
+  --       -- ui = { border = "double" }
+  --       -- finder = {max_height = 0.6, force_max_height = true}
+  --     })
+  --   end
+  -- },
+  { "segeljakt/vim-silicon" }, {
   "iamcco/markdown-preview.nvim",
   lazy = true,
   ft = "markdown",

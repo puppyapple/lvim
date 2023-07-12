@@ -47,12 +47,6 @@ lvim.builtin.which_key.mappings["gf"] = {
   o = { "<cmd>GitConflictChooseOurs<cr>", "Use current changes" }
 }
 
-lvim.builtin.which_key.mappings["lr"] = {
-  "<cmd>Lspsaga rename<cr>", "Rename(LspSaga)"
-}
-lvim.builtin.which_key.mappings["la"] = {
-  "<cmd>Lspsaga code_action<cr>", "Code Action"
-}
 
 -- Lua
 lvim.lsp.buffer_mappings.normal_mode['gw'] = {
@@ -72,41 +66,53 @@ lvim.lsp.buffer_mappings.normal_mode['gt'] = {
 --     "<cmd>TroubleToggle lsp_definitions<cr>", "Go to definitions(Trouble)"
 -- }
 
--- lvim.lsp.buffer_mappings.normal_mode['gr'] = {
---     "<cmd>TroubleToggle lsp_references<cr>", "Go to references(Trouble)"
--- }
-
--- lvim.lsp.buffer_mappings.normal_mode['gj'] = {
---     vim.diagnostic.goto_next, "Next Diagnostic"
--- }
--- lvim.lsp.buffer_mappings.normal_mode['gk'] = {
---     vim.diagnostic.goto_prev, "Prev Diagnostic"
--- }
-lvim.lsp.buffer_mappings.normal_mode['K'] = {
-  "<cmd>Lspsaga hover_doc<cr>", "Hover Documentation(LspSaga)"
-}
-lvim.lsp.buffer_mappings.normal_mode['gl'] = {
-  "<cmd>Lspsaga show_line_diagnostics<cr>", "Go to references(LspSaga)"
-}
 lvim.lsp.buffer_mappings.normal_mode['gr'] = {
-  "<cmd>Lspsaga lsp_finder<cr>", "Go to references(LspSaga)"
+  "<cmd>Telescope lsp_references<cr>", "Go to references(Telescope)"
 }
 
-lvim.lsp.buffer_mappings.normal_mode['gd'] = {
-  "<cmd>Lspsaga goto_definition<cr>", "Go to definitions(LspSaga)"
-}
-lvim.lsp.buffer_mappings.normal_mode['gp'] = {
-  "<cmd>Lspsaga peek_definition<cr>", "Peek definitions(LspSaga)"
-}
 lvim.lsp.buffer_mappings.normal_mode['gj'] = {
-  "<cmd>Lspsaga diagnostic_jump_next<cr>", "Next Diagnostic"
+  vim.diagnostic.goto_next, "Next Diagnostic"
 }
 lvim.lsp.buffer_mappings.normal_mode['gk'] = {
-  "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Prev Diagnostic"
+  vim.diagnostic.goto_prev, "Prev Diagnostic"
 }
-lvim.lsp.buffer_mappings.normal_mode['go'] = {
-  "<cmd>SymbolsOutline<cr>", "Symbols Outline"
+lvim.lsp.buffer_mappings.normal_mode['gp'] = {
+  "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "Peek definitions(goto)"
 }
+
+
+-- Lspsaga
+-- lvim.builtin.which_key.mappings["lr"] = {
+--   "<cmd>Lspsaga rename<cr>", "Rename(LspSaga)"
+-- }
+-- lvim.builtin.which_key.mappings["la"] = {
+--   "<cmd>Lspsaga code_action<cr>", "Code Action"
+-- }
+-- lvim.lsp.buffer_mappings.normal_mode['K'] = {
+--   "<cmd>Lspsaga hover_doc<cr>", "Hover Documentation(LspSaga)"
+-- }
+-- lvim.lsp.buffer_mappings.normal_mode['gl'] = {
+--   "<cmd>Lspsaga show_line_diagnostics<cr>", "Go to references(LspSaga)"
+-- }
+-- lvim.lsp.buffer_mappings.normal_mode['gr'] = {
+--   "<cmd>Lspsaga finder<cr>", "Go to references(LspSaga)"
+-- }
+
+-- lvim.lsp.buffer_mappings.normal_mode['gd'] = {
+--   "<cmd>Lspsaga goto_definition<cr>", "Go to definitions(LspSaga)"
+-- }
+-- lvim.lsp.buffer_mappings.normal_mode['gp'] = {
+--   "<cmd>Lspsaga peek_definition<cr>", "Peek definitions(LspSaga)"
+-- }
+-- lvim.lsp.buffer_mappings.normal_mode['gj'] = {
+--   "<cmd>Lspsaga diagnostic_jump_next<cr>", "Next Diagnostic"
+-- }
+-- lvim.lsp.buffer_mappings.normal_mode['gk'] = {
+--   "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Prev Diagnostic"
+-- }
+-- lvim.lsp.buffer_mappings.normal_mode['go'] = {
+--   "<cmd>SymbolsOutline<cr>", "Symbols Outline"
+-- }
 
 
 lvim.builtin.which_key.mappings["i"] = {

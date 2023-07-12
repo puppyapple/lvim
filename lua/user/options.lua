@@ -8,11 +8,11 @@ lvim.builtin.bufferline.options.separator_style = "slant"
 lvim.builtin.bufferline.options.indicator.style = "underline"
 lvim.builtin.bufferline.options.always_show_bufferline = true
 
-vim.diagnostic.config({ virtual_text = true })
+-- vim.diagnostic.config({ virtual_text = true })
 lvim.builtin.cmp.cmdline.enable = true
 lvim.builtin.cmp.experimental.ghost_text = true
-lvim.builtin.breadcrumbs.active = false
-vim.diagnostic.config({ update_in_insert = true })
+-- lvim.builtin.breadcrumbs.active = true
+-- vim.diagnostic.config({ update_in_insert = true })
 lvim.lsp.installer.setup.automatic_installation = true
 -- table.insert(lvim.builtin.cmp.sources, {name = "pandoc_references"})
 -- table.insert(lvim.builtin.cmp.sources, {name = "nvim_lsp_signature_help"})
