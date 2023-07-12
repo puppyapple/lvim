@@ -1,5 +1,7 @@
 -- Additional Plugins
 lvim.plugins = {
+  "ChristianChiarulli/swenv.nvim",
+  "stevearc/dressing.nvim",
   {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
@@ -30,15 +32,16 @@ lvim.plugins = {
     end,
   },
   { "ojroques/vim-oscyank", branch = "main" },
-  {
-    'HallerPatrick/py_lsp.nvim',
-    config = function()
-      require("py_lsp").setup({
-        -- host_python = "/home/puppyapple/anaconda3/bin",
-        source_strategies = { "conda" }
-      })
-    end
-  }, { 'folke/tokyonight.nvim' }, { "nvim-neotest/neotest-python" },
+  -- {
+  --   'HallerPatrick/py_lsp.nvim',
+  --   config = function()
+  --     require("py_lsp").setup({
+  --       -- host_python = "/home/puppyapple/anaconda3/bin",
+  --       source_strategies = { "conda" }
+  --     })
+  --   end
+  -- },
+  { 'folke/tokyonight.nvim' }, { "nvim-neotest/neotest-python" },
   { "nvim-neotest/neotest" }, {
   "ray-x/lsp_signature.nvim",
   config = function()

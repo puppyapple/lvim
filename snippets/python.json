@@ -8,5 +8,20 @@
       "content = [x.strip() for x in content]"
     ],
     "description": "read from file"
+  },
+  "json_dump_string": {
+    "prefix": "json_dump_string",
+    "body": ["json.dumps(object, ensure_ascii=False)"],
+    "description": "dump python object to json string"
+  },
+  "json_dump_file": {
+    "prefix": "json_dump_file",
+    "body": ["json.dump(object, open(file, 'w'), ensure_ascii=False)"],
+    "description": "dump python object to json file"
+  },
+  "json_load_string": {
+    "prefix": "json_dump_string",
+    "body": ["json.loads(json_string)"],
+    "description": "dump python object to json string"
   }
 }

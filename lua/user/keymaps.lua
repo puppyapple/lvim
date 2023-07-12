@@ -16,9 +16,9 @@ vim.keymap.set("o", "L", "$")
 vim.keymap.set('v', 'Y', '<Plug>OSCYankVisual')
 -- vim.api.nvim_set_keymap("v", "y", '"+y', {noremap = true})
 -- Use which-key to add extra bindings with the leader-key prefix
-lvim.builtin.which_key.mappings["i"] = {
-  ":PyLspFindVenvs<CR>", "Select python env"
-}
+-- lvim.builtin.which_key.mappings["i"] = {
+--   ":PyLspFindVenvs<CR>", "Select python env"
+-- }
 
 lvim.builtin.which_key.mappings["j"] = { ":bnext<CR>", "Next Buffer" }
 lvim.builtin.which_key.mappings["k"] = { ":bprevious<CR>", "Previous Buffer" }
@@ -106,4 +106,9 @@ lvim.lsp.buffer_mappings.normal_mode['gk'] = {
 }
 lvim.lsp.buffer_mappings.normal_mode['go'] = {
   "<cmd>SymbolsOutline<cr>", "Symbols Outline"
+}
+
+
+lvim.builtin.which_key.mappings["i"] = {
+  "<cmd>lua require('swenv.api').pick_venv()<cr>", "Choose Env"
 }
