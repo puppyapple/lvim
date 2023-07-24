@@ -66,9 +66,6 @@ lvim.lsp.buffer_mappings.normal_mode['gt'] = {
 --     "<cmd>TroubleToggle lsp_definitions<cr>", "Go to definitions(Trouble)"
 -- }
 
-lvim.lsp.buffer_mappings.normal_mode['gr'] = {
-  "<cmd>Telescope lsp_references<cr>", "Go to references(Telescope)"
-}
 
 lvim.lsp.buffer_mappings.normal_mode['gj'] = {
   vim.diagnostic.goto_next, "Next Diagnostic"
@@ -78,6 +75,13 @@ lvim.lsp.buffer_mappings.normal_mode['gk'] = {
 }
 lvim.lsp.buffer_mappings.normal_mode['gp'] = {
   "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", "Peek definitions(goto)"
+}
+lvim.lsp.buffer_mappings.normal_mode['gr'] = {
+  -- "<cmd>lua require('goto-preview').goto_preview_references()<CR>", "Go to references(goto)"
+  "<cmd>Trouble lsp_references<cr>", "Go to references(Trouble)"
+}
+lvim.lsp.buffer_mappings.normal_mode['gd'] = {
+  "<cmd>Trouble lsp_definitions<CR>", "Go to definitions(trouble)"
 }
 
 
